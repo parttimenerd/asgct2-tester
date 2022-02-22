@@ -1,0 +1,14 @@
+[submodule "cur/async-profiler"]
+	path = cur/async-profiler
+	url = https://github.com/jvm-profiling-tools/async-profiler
+[submodule "mod/async-profiler"]
+	path = mod/async-profiler
+	url = https://github.com/SAP/async-profiler
+[submodule "mod/jdk"]
+	path = mod/jdk
+	url = git@github.com:parttimenerd/jdk.git
+	branch = parttimenerd_asgct2
+[submodule "cur/jdk"]
+	path = cur/jdk
+	url = git@github.com:parttimenerd/jdk.git
+	branch = parttimenerd_asgct_fix

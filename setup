@@ -1,0 +1,20 @@
+#! /bin/sh
+
+case "$(uname -s)" in
+   Darwin)
+     SCRIPT_PATH=$(greadlink -f "$0")
+     ;;
+
+   *)
+     SCRIPT_PATH=$(readlink -f "$0")
+     ;;
+esac
+
+cd $(dirname "$SCRIPT_PATH")
+
+stat benchmarks/renaissance.jar || wget https://github.com/renaissance-benchmarks/renaissance/releases/download/v0.14.0/renaissance-gpl-0.14.0.jar -O benchmarks/renaissance.jar
+stat benchmarks/dacapo.jar || wget https://downloads.sourceforge.net/project/dacapobench/9.12-bach-MR1/dacapo-9.12-MR1-bach.jar -O benchmarks/dacapo.jar
+
+for x in cur mod; do
+    (cd "$x/async-profiler"; timeout 10 make test)
+done
