@@ -18,7 +18,7 @@ class Version(enum.Enum):
         return self.value
 
 
-versions = [Version.MOD, Version.CUR]
+versions = [Version.MOD]#, Version.CUR]
 
 
 def base(version: Version = None) -> Path:

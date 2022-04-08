@@ -10,6 +10,9 @@ the new AsyncGetCallTrace call) regarding
 
 by profiling a set of open source benchmarks.
 
+Use the [jdk-profiling-tester](https://github.com/parttimenerd/jdk-profiling-tester)
+for just testing the stability (absence of `hs_err` files).
+
 Usage
 -----
 Compile the JDKs (be sure to use `images`) and
